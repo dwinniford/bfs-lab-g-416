@@ -27,7 +27,7 @@ beforeEach(function() {
 
 describe('#findAdjacentNodes', function() {
   it("should return an array of adjacent nodes", function() {
-    expect(findAdjacent('34th&6th',  vertices, edges)).toEqual([{name: '23rd&6th', distance: null, predecessor: null},
+    expect(findAdjacentNodes('34th&6th',  vertices, edges)).toEqual([{name: '23rd&6th', distance: null, predecessor: null},
       {name: '28th&Bwy', distance: null, predecessor: null}
     ])
   });
@@ -35,7 +35,7 @@ describe('#findAdjacentNodes', function() {
   it("excludes discovered nodes", function() {
 		let thirtyFourthAndSixth = vertices[0]
 		thirtyFourthAndSixth.distance = 0
-    expect(findAdjacent('28th&Bwy',  vertices, edges)).toEqual([
+    expect(findAdjacentNodes('28th&Bwy',  vertices, edges)).toEqual([
       {name: '23rd&Bwy', distance: null, predecessor: null}
     ])
     // but these nodes are not in the node list?
